@@ -6,54 +6,60 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.R
+import com.example.contactbook_androidroom.view.models.Person
 
 
-class ItemAdapter() : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
+class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    val names = arrayOf("A",
-    "B",
-    "C",
-    "D",
-    "E")
-    val numbers = arrayOf("01",
-    "02",
-    "03",
-    "04",
-    "05")
-    val images = intArrayOf(
-        R.drawable.ic_launcher_foreground,
-        R.drawable.ic_launcher_foreground,
-        R.drawable.ic_launcher_foreground,
-        R.drawable.ic_launcher_foreground,
-        R.drawable.ic_launcher_foreground)
+    private val items = mutableListOf<Person>()
+
+    fun add(collection: List<Person>) {
+        items.clear()
+        items.addAll(collection)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_layout,parent,false)
+        val adapterLayout = LayoutInflater
+            .from(parent.context)
+            .inflate(
+                R.layout.card_layout,
+                parent,
+                false
+            )
         return ItemViewHolder(adapterLayout)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.itemImage.setImageResource(images[position])
-        holder.itemName.text = names[position]
-        holder.itemNumber.text = numbers[position]
+        holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int {
-        return names.size
-    }
+    override fun getItemCount(): Int = items.size
 
-    inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemImage: ImageView
         var itemName: TextView
-        var itemNumber: TextView
 
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemName = itemView.findViewById(R.id.item_title)
-            itemNumber = itemView.findViewById(R.id.item_detail)
+        }
+
+        fun bind(person: Person) {
+            itemName.text = person.name
+
+            itemView.setOnClickListener {
+                // todo("Ir al detalle del contacto")
+                Toast.makeText(itemView.context, "Detalle del contacto", Toast.LENGTH_LONG).show()
+            }
+
+            itemImage.setOnClickListener {
+                Toast.makeText(itemView.context, "LLamar al contacto", Toast.LENGTH_LONG).show()
+                // todo("iniciar llamada")
+            }
         }
 
     }
