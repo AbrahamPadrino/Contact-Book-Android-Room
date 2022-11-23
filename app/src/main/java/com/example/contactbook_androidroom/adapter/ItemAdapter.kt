@@ -1,15 +1,22 @@
 package com.example.contactbook_androidroom.adapter
 
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.R
+import com.example.contactbook_androidroom.fragments.ListContactsFragment
+import com.example.contactbook_androidroom.fragments.ListContactsFragmentDirections
 import com.example.contactbook_androidroom.view.models.Person
+import java.util.jar.Attributes.Name
 
 
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
@@ -43,20 +50,32 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
         var itemImage: ImageView
         var itemName: TextView
 
+
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemName = itemView.findViewById(R.id.item_title)
+
         }
 
         fun bind(person: Person) {
             itemName.text = person.name
 
+
+
             itemView.setOnClickListener {
                 // todo("Ir al detalle del contacto")
+                val action = ListContactsFragmentDirections
+                    .actionListContactsFragmentToContactDetailsFragment(
+                        name = person.name,
+                        phoneNumber = person.phone
+                    )
+                itemView.findNavController().navigate(action)
+
                 Toast.makeText(itemView.context, "Detalle del contacto", Toast.LENGTH_LONG).show()
             }
 
             itemImage.setOnClickListener {
+
                 Toast.makeText(itemView.context, "LLamar al contacto", Toast.LENGTH_LONG).show()
                 // todo("iniciar llamada")
             }
