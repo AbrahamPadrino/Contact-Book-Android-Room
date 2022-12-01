@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.adapter.ItemAdapter
 import com.example.contactbook_androidroom.data.ContactDataSourceBuilder
 import com.example.contactbook_androidroom.databinding.ActivityMainBinding
-import com.example.contactbook_androidroom.ui.view.models.Person
+import com.example.contactbook_androidroom.ui.models.Person
 
 class MainActivity : AppCompatActivity() {
 

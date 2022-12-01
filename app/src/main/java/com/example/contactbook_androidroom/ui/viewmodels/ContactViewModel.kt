@@ -1,9 +1,9 @@
-package com.example.contactbook_androidroom.ui.view.viewmodels
+package com.example.contactbook_androidroom.ui.viewmodels
 
 import androidx.lifecycle.*
 import com.example.contactbook_androidroom.data.entities.PersonEntity
 import com.example.contactbook_androidroom.data.repository.ContactRepository
-import com.example.contactbook_androidroom.ui.view.models.Person
+import com.example.contactbook_androidroom.ui.models.Person
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

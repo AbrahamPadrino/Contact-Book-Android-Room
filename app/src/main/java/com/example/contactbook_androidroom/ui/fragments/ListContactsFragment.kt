@@ -16,8 +16,8 @@ import com.example.contactbook_androidroom.ContactBookApplication
 import com.example.contactbook_androidroom.R
 import com.example.contactbook_androidroom.adapter.ItemAdapter
 import com.example.contactbook_androidroom.databinding.FragmentListContactsBinding
-import com.example.contactbook_androidroom.ui.view.viewmodels.ContactViewModel
-import com.example.contactbook_androidroom.ui.view.viewmodels.ContactViewModelFactory
+import com.example.contactbook_androidroom.ui.viewmodels.ContactViewModel
+import com.example.contactbook_androidroom.ui.viewmodels.ContactViewModelFactory
 
 class ListContactsFragment : Fragment() {
 

@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.contactbook_androidroom.data.entities.ContactEntity
 
-@Database(entities = arrayOf(ContactEntity::class), version = 1, exportSchema = false)
-public abstract class ContactRoomDatabase : RoomDatabase() {
+@Database(entities = [ContactEntity::class], version = 1, exportSchema = false)
+abstract class ContactRoomDatabase : RoomDatabase() {
 
     abstract fun contactDao(): ContactDAO
 

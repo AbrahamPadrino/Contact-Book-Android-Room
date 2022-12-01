@@ -1,4 +1,4 @@
-package com.example.contactbook_androidroom.ui.view.models
+package com.example.contactbook_androidroom.ui.models
 
 data class Person(
     val id: Int,

@@ -3,11 +3,12 @@ package com.example.contactbook_androidroom.data
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.example.contactbook_androidroom.ui.view.models.Person
+import com.example.contactbook_androidroom.ui.models.Person
 //import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
+@Deprecated("Usar la implementacion de ContactDAO")
 class ContactDataSourceBuilder(private val context: Context) {
 
     private lateinit var jsonString: String
