@@ -13,9 +13,9 @@ import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.R
-import com.example.contactbook_androidroom.fragments.ListContactsFragment
+import com.example.contactbook_androidroom.ui.fragments.ListContactsFragment
 import com.example.contactbook_androidroom.fragments.ListContactsFragmentDirections
-import com.example.contactbook_androidroom.view.models.Person
+import com.example.contactbook_androidroom.ui.view.models.Person
 import java.util.jar.Attributes.Name
 
 

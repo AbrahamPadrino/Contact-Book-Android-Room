@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listContactsFragment"
-        android:name="com.example.contactbook_androidroom.fragments.ListContactsFragment"
+        android:name="com.example.contactbook_androidroom.ui.fragments.ListContactsFragment"
         android:label="fragment_list_contacts"
         tools:layout="@layout/fragment_list_contacts" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactDetailsFragment"
-        android:name="com.example.contactbook_androidroom.fragments.ContactDetailsFragment"
+        android:name="com.example.contactbook_androidroom.ui.fragments.ContactDetailsFragment"
         android:label="fragment_contact_details"
         tools:layout="@layout/fragment_contact_details" >
         <argument
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/addContactFragment"
-        android:name="com.example.contactbook_androidroom.fragments.AddContactFragment"
+        android:name="com.example.contactbook_androidroom.ui.fragments.AddContactFragment"
         android:label="fragment_add_contact"
         tools:layout="@layout/fragment_add_contact" />
 </navigation>

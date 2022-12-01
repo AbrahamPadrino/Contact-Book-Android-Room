@@ -1,4 +1,4 @@
-package com.example.contactbook_androidroom.fragments
+package com.example.contactbook_androidroom.ui.fragments
 
 
 import android.os.Bundle
