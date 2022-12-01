@@ -1,4 +1,4 @@
-package com.example.contactbook_androidroom.data
+package com.example.contactbook_androidroom.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert

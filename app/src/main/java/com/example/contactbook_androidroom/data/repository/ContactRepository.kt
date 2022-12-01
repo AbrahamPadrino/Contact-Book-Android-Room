@@ -1,6 +1,6 @@
 package com.example.contactbook_androidroom.data.repository
 
-import com.example.contactbook_androidroom.data.ContactDAO
+import com.example.contactbook_androidroom.data.db.ContactDAO
 import com.example.contactbook_androidroom.data.entities.ContactEntity
 import com.example.contactbook_androidroom.data.entities.PersonEntity
 
