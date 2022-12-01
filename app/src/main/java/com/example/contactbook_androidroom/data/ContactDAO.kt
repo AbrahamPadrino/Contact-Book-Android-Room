@@ -13,9 +13,6 @@ interface ContactDAO {
         fun getContacts(): List<ContactEntity>
 
         @Insert(onConflict = OnConflictStrategy.IGNORE)
-        suspend fun insertContact(word: ContactEntity)
-
-        //@Query("DELETE FROM word_table")
-        //suspend fun deleteAll()
+        suspend fun insertContact(contact: ContactEntity)
 
 }

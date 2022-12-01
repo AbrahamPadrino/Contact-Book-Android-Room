@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ListContactsFragment">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_marginStart="20dp"
         android:layout_marginTop="36dp"
         android:text="@string/my_contact_list"
-        android:textColor="@color/material_dynamic_neutral_variant10"
         android:textAlignment="textStart"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -36,14 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
         android:src="@drawable/ic_baseline_person_add"
         app:backgroundTint="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
-        app:layout_constraintVertical_bias="0.914"
         android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
