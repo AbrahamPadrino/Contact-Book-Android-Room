@@ -8,11 +8,10 @@ class ContactRepository(
     private val contactDAO: ContactDAO
 ) {
 
-    suspend fun getContacts(): List<PersonEntity> {
+    fun getContacts(): List<PersonEntity> {
         val contacts = contactDAO.getContacts()
         val peopleContacts = contacts.map {
             PersonEntity(
-                id = it.id,
                 name = it.name,
                 email = it.email,
                 phone = it.phone
@@ -28,7 +27,6 @@ class ContactRepository(
     }
 
     private fun mapToContactEntity(entity: PersonEntity) : ContactEntity = ContactEntity(
-        id = entity.id,
         name = entity.name,
         email = entity.email,
         phone = entity.phone

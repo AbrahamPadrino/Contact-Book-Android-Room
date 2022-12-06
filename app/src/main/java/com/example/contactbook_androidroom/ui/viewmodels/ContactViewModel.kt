@@ -18,9 +18,10 @@ class ContactViewModel(
 
     fun getContacts() {
         viewModelScope.launch(Dispatchers.IO) {
-            val contacts : List<Person> = contactRepository.getContacts().map {
-                mapToModel(it)
-            }
+            val contacts : List<Person> = contactRepository
+                .getContacts().map {
+                    mapToModel(it)
+                }
 
             _liveData.postValue(contacts)
         }
@@ -35,13 +36,11 @@ class ContactViewModel(
 
     private fun mapToModel(entity: PersonEntity) = Person(
         name = entity.name,
-        id = entity.id,
         phone = entity.phone,
         email = entity.email
     )
 
     private fun mapToEntity(model: Person)= PersonEntity(
-        id = model.id,
         name = model.name,
         email = model.email,
         phone = model.phone

@@ -1,22 +1,17 @@
-package com.example.contactbook_androidroom.adapter
+package com.example.contactbook_androidroom.ui.adapter
 
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.R
-import com.example.contactbook_androidroom.ui.fragments.ListContactsFragment
-import com.example.contactbook_androidroom.fragments.ListContactsFragmentDirections
+import com.example.contactbook_androidroom.ui.fragments.ListContactsFragmentDirections
 import com.example.contactbook_androidroom.ui.models.Person
-import java.util.jar.Attributes.Name
 
 
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {

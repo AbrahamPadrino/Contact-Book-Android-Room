@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.ContactBookApplication
 import com.example.contactbook_androidroom.R
-import com.example.contactbook_androidroom.adapter.ItemAdapter
+import com.example.contactbook_androidroom.ui.adapter.ItemAdapter
 import com.example.contactbook_androidroom.databinding.FragmentListContactsBinding
 import com.example.contactbook_androidroom.ui.viewmodels.ContactViewModel
 import com.example.contactbook_androidroom.ui.viewmodels.ContactViewModelFactory
