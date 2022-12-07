@@ -2,12 +2,7 @@ package com.example.contactbook_androidroom.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.contactbook_androidroom.ui.adapter.ItemAdapter
-import com.example.contactbook_androidroom.data.ContactDataSourceBuilder
 import com.example.contactbook_androidroom.databinding.ActivityMainBinding
-import com.example.contactbook_androidroom.ui.models.Person
 
 class MainActivity : AppCompatActivity() {
 

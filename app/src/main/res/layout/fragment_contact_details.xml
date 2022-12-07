@@ -29,7 +29,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
         android:textSize="22sp"
-        android:textColor="@color/material_dynamic_neutral10"
         />
 
 </FrameLayout>

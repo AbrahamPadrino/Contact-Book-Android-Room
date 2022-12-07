@@ -49,9 +49,9 @@ class AddContactFragment : Fragment() {
 
     private fun setupViewEvents() {
         binding.buttonSave.setOnClickListener {
-            val contactName : String = binding.nameContact.text.toString()
-            val contactPhoneNumber : String = binding.phoneContact.text.toString()
-            val contactEmail : String = binding.emailContact.text.toString()
+            val contactName : String = binding.tilContactName.editText?.text.toString()
+            val contactPhoneNumber : String = binding.tilContactPhone.editText?.text.toString()
+            val contactEmail : String = binding.tilContactEmail.editText?.text.toString()
 
             val model = Person(
                 name = contactName,
@@ -60,6 +60,7 @@ class AddContactFragment : Fragment() {
             )
 
             contactViewModel.createContact(model)
+            findNavController().popBackStack()
         }
     }
 
