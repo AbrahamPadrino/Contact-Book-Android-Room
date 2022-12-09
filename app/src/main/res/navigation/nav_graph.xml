@@ -30,6 +30,9 @@
         <argument
             android:name="phoneNumber"
             app:argType="string" />
+        <argument
+            android:name="addressEmail"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/addContactFragment"

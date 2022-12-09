@@ -17,10 +17,12 @@ class ContactDetailsFragment : Fragment() {
     companion object {
         val NAME = "name"
         val NUMBER = "phoneNumber"
+        val EMAIL = "addressEmail"
 
     }
     private lateinit var name: String
     private lateinit var number: String
+    private lateinit var email: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,7 @@ class ContactDetailsFragment : Fragment() {
         arguments?.let {
             name = it.getString(NAME).toString()
             number = it.getString(NUMBER).toString()
+            email = it.getString(EMAIL).toString()
         }
 
     }
@@ -43,8 +46,9 @@ class ContactDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.itemName.text = name
-        binding.itemNumber.text = number
+        binding.txtName.text= name
+        binding.txtNumber.text = number
+        binding.txtEmail.text = email
 
     }
 

@@ -62,7 +62,8 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
                 val action = ListContactsFragmentDirections
                     .actionListContactsFragmentToContactDetailsFragment(
                         name = person.name,
-                        phoneNumber = person.phone
+                        phoneNumber = person.phone,
+                        addressEmail = person.email
                     )
                 itemView.findNavController().navigate(action)
 
