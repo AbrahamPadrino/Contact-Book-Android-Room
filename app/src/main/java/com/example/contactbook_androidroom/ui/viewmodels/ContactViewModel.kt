@@ -3,7 +3,7 @@ package com.example.contactbook_androidroom.ui.viewmodels
 import androidx.lifecycle.*
 import com.example.contactbook_androidroom.data.entities.PersonEntity
 import com.example.contactbook_androidroom.data.repository.ContactRepository
-import com.example.contactbook_androidroom.ui.models.Person
+import com.example.contactbook_androidroom.ui.models.PersonModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -11,14 +11,14 @@ class ContactViewModel(
     private val contactRepository: ContactRepository
 ): ViewModel() {
 
-    val liveData : LiveData<List<Person>> get() = _liveData
+    val liveData : LiveData<List<PersonModel>> get() = _liveData
 
-    private val _liveData = MutableLiveData<List<Person>>()
+    private val _liveData = MutableLiveData<List<PersonModel>>()
 
 
     fun getContacts() {
         viewModelScope.launch(Dispatchers.IO) {
-            val contacts : List<Person> = contactRepository
+            val contacts : List<PersonModel> = contactRepository
                 .getContacts().map {
                     mapToModel(it)
                 }
@@ -27,20 +27,27 @@ class ContactViewModel(
         }
     }
 
-    fun createContact(model: Person) {
+    fun createContact(model: PersonModel) {
         viewModelScope.launch(Dispatchers.IO) {
             val entity = mapToEntity(model)
             contactRepository.insertContact(entity)
         }
     }
 
-    private fun mapToModel(entity: PersonEntity) = Person(
+    fun updateContact(model: PersonModel) {
+        viewModelScope.launch {
+            val entity = mapToEntity(model)
+            contactRepository.updateContact(entity)
+        }
+    }
+
+    private fun mapToModel(entity: PersonEntity) = PersonModel(
         name = entity.name,
         phone = entity.phone,
         email = entity.email
     )
 
-    private fun mapToEntity(model: Person)= PersonEntity(
+    private fun mapToEntity(model: PersonModel)= PersonEntity(
         name = model.name,
         email = model.email,
         phone = model.phone

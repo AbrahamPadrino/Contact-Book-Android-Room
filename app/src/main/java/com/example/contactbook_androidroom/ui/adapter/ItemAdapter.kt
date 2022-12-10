@@ -11,14 +11,14 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactbook_androidroom.R
 import com.example.contactbook_androidroom.ui.fragments.ListContactsFragmentDirections
-import com.example.contactbook_androidroom.ui.models.Person
+import com.example.contactbook_androidroom.ui.models.ActionContact
+import com.example.contactbook_androidroom.ui.models.PersonModel
 
 
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+    private val items = mutableListOf<PersonModel>()
 
-    private val items = mutableListOf<Person>()
-
-    fun add(collection: List<Person>) {
+    fun add(collection: List<PersonModel>) {
         items.clear()
         items.addAll(collection)
         notifyDataSetChanged()
@@ -52,22 +52,16 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
         }
 
-        fun bind(person: Person) {
+        fun bind(person: PersonModel) {
             itemName.text = person.name
 
-
-
             itemView.setOnClickListener {
-                // todo("Ir al detalle del contacto")
                 val action = ListContactsFragmentDirections
-                    .actionListContactsFragmentToContactDetailsFragment(
-                        name = person.name,
-                        phoneNumber = person.phone,
-                        addressEmail = person.email
+                    .actionListContactsFragmentToAddContactFragment(
+                        model = person,
+                        action = ActionContact.MODIFY
                     )
                 itemView.findNavController().navigate(action)
-
-                Toast.makeText(itemView.context, "Detalle del contacto", Toast.LENGTH_LONG).show()
             }
 
             itemImage.setOnClickListener {

@@ -10,9 +10,7 @@
         android:name="com.example.contactbook_androidroom.ui.fragments.ListContactsFragment"
         android:label="fragment_list_contacts"
         tools:layout="@layout/fragment_list_contacts" >
-        <action
-            android:id="@+id/action_listContactsFragment_to_contactDetailsFragment"
-            app:destination="@id/contactDetailsFragment" />
+
         <action
             android:id="@+id/action_listContactsFragment_to_addContactFragment"
             app:destination="@id/addContactFragment"
@@ -36,8 +34,18 @@
     </fragment>
     <fragment
         android:id="@+id/addContactFragment"
-        android:name="com.example.contactbook_androidroom.ui.fragments.AddContactFragment"
+        android:name="com.example.contactbook_androidroom.ui.fragments.CreateOrModifyContactFragment"
         android:label="fragment_add_contact"
         tools:layout="@layout/fragment_add_contact"
-        />
+        >
+        <argument
+            android:name="model"
+            app:argType="com.example.contactbook_androidroom.ui.models.PersonModel"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="action"
+            app:argType="com.example.contactbook_androidroom.ui.models.ActionContact"
+            android:defaultValue="CREATE" />
+    </fragment>
 </navigation>

@@ -26,6 +26,11 @@ class ContactRepository(
         contactDAO.insertContact(entity)
     }
 
+    suspend fun updateContact(personEntity: PersonEntity) {
+        val entity = mapToContactEntity(personEntity)
+        contactDAO.updateContact(entity)
+    }
+
     private fun mapToContactEntity(entity: PersonEntity) : ContactEntity = ContactEntity(
         name = entity.name,
         email = entity.email,
